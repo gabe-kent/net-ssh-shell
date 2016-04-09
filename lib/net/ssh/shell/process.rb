@@ -84,6 +84,10 @@ module Net; module SSH; class Shell
     def on_finish(&callback)
       @on_finish = callback
     end
+    
+    def print_data
+      on_output { |_, b| print b}
+    end
 
     protected
 
